@@ -51,7 +51,7 @@ angular.module('ionicStock.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('MyStocksCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae 5', id: 1 },
     { title: 'Chill', id: 2 },
@@ -63,6 +63,6 @@ angular.module('ionicStock.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('StockCtrl', function($scope, $stateParams) {
   console.log($stateParams.id);
 });
