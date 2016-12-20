@@ -1,5 +1,52 @@
-<ion-view view-title="Stock">
-  <ion-content>
-    <h1>Playlist</h1>
+<ion-view view-title="{{ticker}}">
+
+  <div class="bar bar-subheader bar-light">
+
+    <!-- left subheader buttons-->
+    <div class="buttons item-button-left" >
+      <div class="button button-clear ">
+        <h6>Company Name </h6>
+      </div>
+    </div>
+
+    <h8 class="title text-center">1000.5000</h8>
+
+    <!-- right subheader buttons-->
+    <div class="buttons item-button-right">
+      <div class="button button-clear ">
+        <h5> +100.0000%</h5>
+      </div>
+    </div>
+
+  </div>
+
+
+  <ion-content class="has-subheader ">
+
+    <div class="card">
+      <div class="item item-divider">Market Data</div>
+      <div class="row row-center">
+        <div class="col">Data: </div>
+        <div class="col">1000.5000 </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">Notes</div>
+      <a class="item">
+        <h2>Note Title</h2>
+      </a>
+
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">News</div>
+      <a class="item item-icon-right">
+        <h2>News Story Title</h2>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+    </div>
+
+
   </ion-content>
 </ion-view>

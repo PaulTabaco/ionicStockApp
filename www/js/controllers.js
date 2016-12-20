@@ -24,8 +24,8 @@ angular.module('ionicStock.controllers', [])
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
+    scope: $scope})
+    .then(function(modal) {
     $scope.modal = modal;
   });
 
@@ -51,18 +51,23 @@ angular.module('ionicStock.controllers', [])
   };
 })
 
-.controller('MyStocksCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae 5', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 },
-    { title: 'Cowbell', id: 8 }
+.controller('MyStocksCtrl', ['$scope',  function($scope) {
+  $scope.myStocksArray = [
+    {ticker:'AAPL'},
+    {ticker:'GPRO'},
+    {ticker:'FB'},
+    {ticker:'NFLX'},
+    {ticker:'TSLA'},
+    {ticker:'BRK-A'},
+    {ticker:'INTC'},
+    {ticker:'MSFT'},
+    {ticker:'GE'},
+    {ticker:'BAC'},
+    {ticker:'C'},
+    {ticker:'T'}
   ];
-})
+}])
 
-.controller('StockCtrl', function($scope, $stateParams) {
-  console.log($stateParams.id);
-});
+.controller('StockCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
+  $scope.ticker = $stateParams.stockTicker;
+}]);

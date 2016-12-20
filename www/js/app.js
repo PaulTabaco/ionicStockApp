@@ -1,4 +1,10 @@
-angular.module('ionicStock', ['ionic', 'ionicStock.controllers'])
+angular.module('ionicStock', [
+  'ionic',
+  'ionicStock.controllers',
+  'ionicStock.services',
+  'ionicStock.filters',
+  'ionicStock.directives'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

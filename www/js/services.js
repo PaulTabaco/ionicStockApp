@@ -1,0 +1,6 @@
+angular.module('ionicStock.services', [])
+
+
+
+
+;
