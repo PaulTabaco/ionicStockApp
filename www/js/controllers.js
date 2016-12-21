@@ -73,14 +73,25 @@ angular.module('ionicStock.controllers', [])
   $scope.ticker = $stateParams.stockTicker;
 
   $scope.$on('$ionicView.afterEnter', function () {
-    getPriceData()
+    //getPriceData();
+    getDetailsData()
+
   });
 
   function getPriceData() {
     var promise = stockDataService.getPriceData($scope.ticker);
     promise.then(function (data) {
       console.log(data);
+      $scope.stockPriceData = data ;
     })
+  };
+
+  function getDetailsData() {
+    var promise = stockDataService.getDetailsData($scope.ticker);
+    promise.then(function (data) {
+      console.log(data);
+      $scope.stockDetailsData = data;
+    });
   }
 
 

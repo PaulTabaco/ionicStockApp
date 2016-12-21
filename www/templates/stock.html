@@ -5,18 +5,18 @@
     <!-- left subheader buttons-->
     <div class="buttons item-button-left" >
       <div class="button button-clear ">
-        <h6>Company Name </h6>
+        <h6>{{stockDetailsData.Name}}</h6>
       </div>
     </div>
-
-    <h8 class="title text-center">1000.5000</h8>
 
     <!-- right subheader buttons-->
     <div class="buttons item-button-right">
       <div class="button button-clear ">
-        <h5> +100.0000%</h5>
+        <h5>{{stockDetailsData.Change}}%</h5>
       </div>
     </div>
+
+    <h8 class="title text-center">{{stockDetailsData.Ask}}</h8>
 
   </div>
 
