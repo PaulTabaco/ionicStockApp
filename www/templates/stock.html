@@ -26,8 +26,46 @@
     <div class="card">
       <div class="item item-divider">Market Data</div>
       <div class="row row-center">
-        <div class="col">Data: </div>
-        <div class="col">1000.5000 </div>
+        <div class="col">Ask:</div>
+        <div class="col">{{stockDetailsData.Ask}}</div>
+        <div class="col">Bid:</div>
+        <div class="col">{{stockDetailsData.Bid}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">Prev. close:</div>
+        <div class="col">{{stockDetailsData.PreviousClose}}</div>
+        <div class="col">Open:</div>
+        <div class="col">{{stockDetailsData.Open}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">Day's High:</div>
+        <div class="col">{{stockDetailsData.DaysHigh}}</div>
+        <div class="col">Day's Low:</div>
+        <div class="col">{{stockDetailsData.DaysLow}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">52w High:</div>
+        <div class="col">{{stockDetailsData.YearHigh}}</div>
+        <div class="col">52w Low:</div>
+        <div class="col">{{stockDetailsData.YearLow}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">Volume:</div>
+        <div class="col">{{stockDetailsData.Volume}}</div>
+        <div class="col">Avg. Volume:</div>
+        <div class="col">{{stockDetailsData.AverageDailyVolume}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">Market Cap:</div>
+        <div class="col">{{stockDetailsData.MarketCapitalization}}</div>
+        <div class="col">EBITDA:</div>
+        <div class="col">{{stockDetailsData.EBITDA}}</div>
+      </div>
+      <div class="row row-center">
+        <div class="col">PEG-R:</div>
+        <div class="col">{{stockDetailsData.PEGRatio}}</div>
+        <div class="col">EP:</div>
+        <div class="col">{{stockDetailsData.EarningsShare}}</div>
       </div>
     </div>
 
