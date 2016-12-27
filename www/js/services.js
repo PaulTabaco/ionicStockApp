@@ -1,11 +1,11 @@
 angular.module('ionicStock.services', [])
 
-  .factory ('encodeURIService', function () {
-      return {
-        encode: function (string){
-          return encodeURIComponent(string).replace(/\"/g, "%22").replace(/\ /g, "%20").replace(/[!'()]/g, escape);
-        }
-      };
+  .factory('encodeURIService', function () {
+    return {
+      encode: function (string) {
+        return encodeURIComponent(string).replace(/\"/g, "%22").replace(/\ /g, "%20").replace(/[!'()]/g, escape);
+      }
+    };
   })
 
   .factory('dateService', function ($filter) {
@@ -34,7 +34,7 @@ angular.module('ionicStock.services', [])
     var getDetailsData = function (ticker) {
 
       var deferred = $q.defer(),
-        query = 'select * from yahoo.finance.quotes where symbol IN ("' + ticker + '")' ,
+        query = 'select * from yahoo.finance.quotes where symbol IN ("' + ticker + '")',
         url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIService.encode(query) + '&format=json&env=http://datatables.org/alltables.env';
 
       $http.get(url)
@@ -66,12 +66,47 @@ angular.module('ionicStock.services', [])
           console.log("Price Data Error: " + error);
           deferred.reject();
         });
-       return deferred.promise;
+      return deferred.promise;
     };
 
-    return  {
+    return {
       getPriceData: getPriceData,
       getDetailsData: getDetailsData
-    } ;
+    };
+  })
+
+  .factory('chardDataService', function ($q, $http, encodeURIService) {
+
+    var getHistoricalData = function (ticker , fromDate, todayDate) {
+
+      var deferred = $q.deferred();
+      query = 'select = from yahoo.finance.getHistoricaldata where symbol = " ' + ticker + ' " and startDate = " ' + fromDate + ' " and endDate = " ' + todayDate + ' " ';
+      url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIService.encode(query) + '&format=json&env=http://datatables.org/alltables.env';
+      $http.get(url)
+        .success(function (json) {
+          console.log(json);
+          var jsonData = json;
+          deferred.resolve(jsonData);
+        })
+        .error(function (error) {
+          console.log("Chart data error" + error);
+          deferred.reject();
+        })
+
+      return deferred.promise;
+
+
+    };
+
+
+
+    return {
+      getHistoricalData: getHistoricalData 
+    };
+
+
+
+
   });
+
 ;
